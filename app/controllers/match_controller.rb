@@ -1,4 +1,4 @@
-class MatchController < ApplicationController
+class MatchesController < ApplicationController
 
   def update
     match_params = params[:match][:winner]
@@ -12,16 +12,13 @@ class MatchController < ApplicationController
     match = Match.new()
     match.user = current_user
     match.save
-    if request.xhr?
-      erb :match, layout: false
-    else
-      erb :match
-    end
+    render :match
+
 
   def show
     @user = User.find(id)
     @games = @user.games
     @matches = @user.matches
-    erb :scores
+    render :scores
   end
 end
