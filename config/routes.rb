@@ -17,6 +17,7 @@ RealTennis::Application.routes.draw do
   post 'login', to: 'auths#create_session'
   post 'signup', to: 'users#create'
 
+  # get 'match/new', to: 'match#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

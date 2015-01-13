@@ -13,6 +13,7 @@ class MatchesController < ApplicationController
     match.user = current_user
     match.save
     render :match
+  end
 
 
   def show
@@ -20,5 +21,9 @@ class MatchesController < ApplicationController
     @games = @user.games
     @matches = @user.matches
     render :scores
+  end
+
+  def new
+    render text: 'hi'
   end
 end
