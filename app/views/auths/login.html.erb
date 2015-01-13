@@ -1,0 +1,11 @@
+<div class='container'>
+  <h2>Login</h2>
+  <%= display_error %>
+  <%= form_for :auth do |f| %>
+    Username<br>
+    <%= f.text_field :user_name %><br>
+    Password<br>
+    <%= f.password_field :password %><br>
+    <%= f.submit 'Login' %>
+  <% end %>
+</div>
