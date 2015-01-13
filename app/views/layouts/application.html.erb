@@ -5,10 +5,41 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
+
+  <link rel="stylesheet" href="/assets/stylesheets/normalize.css">
+  <link rel="stylesheet" href="/assets/stylesheets/application.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/assets/javascripts/game.js"></script>
+  <script src="/assets/javascripts/js/match.js"></script>
+  <script src="/assets/javascripts/js/application.js"></script>
+
 </head>
 <body>
-
-<%= yield %>
-
+  <div id="wrapper">
+    <div id="header">
+    <nav>
+      <ul>
+        <li><a href = "/">Home</a></li>
+        <li><a href = "/about">About</a></li>
+      </ul>
+    </nav>
+      <div id="login-toolbar">
+          <% if current_user %>
+            <button><a href="/logout">Logout</a></button>
+          <% else %>
+            <button id="login_button"><a href='/login'>Login</a></button> | <button id="signup_button"><a href='/signup'>Signup</a></button>
+          <% end %>
+      </div>
+    </div>
+    <div class='content'>
+    <%= yield %>
+    </div>
+    <div id="footer">
+      <footer>&copy; Adrian Carton de Wiart 1897</footer>
+    </div>
+  </div>
 </body>
 </html>
+
+

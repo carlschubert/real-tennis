@@ -1,9 +1,10 @@
 class IndexController < ApplicationController
   def about
+    render :about
   end
 
   def show
-    render :application
+    render :show
 
   end
 end
