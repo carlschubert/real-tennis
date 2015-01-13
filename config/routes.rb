@@ -13,8 +13,9 @@ RealTennis::Application.routes.draw do
 
   get 'login', to: 'auths#login'
   get 'logout', to: 'auths#logout'
-  get 'signup', to: 'auths#signup'
+  get 'signup', to: 'users#new'
   post 'login', to: 'auths#create_session'
+  post 'signup', to: 'users#create'
 
 
   # The priority is based upon order of creation:

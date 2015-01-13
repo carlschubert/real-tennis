@@ -25,7 +25,16 @@ class AuthsController < ApplicationController
     end
   end
 
-  # def auth_params
-  #   params.require(:auth).permit(:user_name, :password)
-  # end
+  def auth_params
+    params.require(:user).permit(:name, :password, :password_confirmation)
+  end
+
+  def create
+    100.times do
+      p '-----------------------------------'
+    end
+    binding.pry
+    User.create(auth_params)
+    redirect_to root_path
+  end
 end

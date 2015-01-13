@@ -3,7 +3,7 @@
   <%= display_error %>
   <%= form_for :user, url: {action: "create"} do |f| %>
     Username<br>
-    <%= f.text_field :user_name %><br>
+    <%= f.text_field :name %><br>
     Password<br>
     <%= f.password_field :password %><br>
     <%= f.password_field :password_confirmation %><br>
