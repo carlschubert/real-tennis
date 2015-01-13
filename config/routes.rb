@@ -10,6 +10,13 @@ RealTennis::Application.routes.draw do
 
   # root 'index#index'
   root :to => 'index#show'
+
+  get 'login', to: 'auths#login'
+  get 'logout', to: 'auths#logout'
+  get 'signup', to: 'auths#signup'
+  post 'login', to: 'auths#create_session'
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
